@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import view as auth_views
 
 urlpatterns = [
 #path function defines a url pattern
@@ -7,5 +8,7 @@ urlpatterns = [
 # views.index is the function defined in views.py
 # name='index' parameter is to dynamically create url
 # example in html <a href="{% url 'index' %}">Home</a>.
-path('', views.index, name='index'),
+    path('', views.index, name='index'),
+
+    path('login/', auth_views.LoginView.as_view(), name='login'),
 ]
