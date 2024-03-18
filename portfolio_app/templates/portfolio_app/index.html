@@ -6,8 +6,17 @@
 {% block content %}
 <h1>Computer Science Portfolios</h1>
 
-
-<h2>More to come from Daniel K</h2>
-
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Portfolio</th>
+    <tr>
+    {% for student in students %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td><a class="btn btn-primary" href={{student.portfolio.get_absolute_url}} role="button">View</a></td>
+        </tr>
+    {% endfor %}
+</table>
 
 {% endblock %}

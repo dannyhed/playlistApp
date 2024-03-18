@@ -1,0 +1,21 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+<h2>Title: {{portfolio}}</h2>
+<p><b>Portfolio Active: {{portfolio.is_active}}</b></p>
+<p><b>About: {{portfolio.about}}</b></p>
+<p><b>Contact Email: {{portfolio.contact_email}}</b></p>
+
+<h2>Projects</h2>
+
+<a class="btn btn-primary" href="new_project" role="button">New</a>
+
+{% for project in projects %}
+    <p>{{project}}
+    <a class="btn btn-primary" href={{project.get_absolute_url}} role="button">View</a>
+    <a class="btn btn-primary" href="edit_project/{{project.id}}" role="button">Edit</a>
+    <a class="btn btn-primary" href="del_project/{{project.id}}" role="button">Delete</a>
+    </p>
+{% endfor %}
+
+{% endblock %}
