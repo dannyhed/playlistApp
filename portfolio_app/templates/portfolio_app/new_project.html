@@ -5,8 +5,8 @@
 <form action="" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <a class="btn btn-primary" href={{portfolio.get_absolute_url}} role="button">Cancel</a>
-    <input type="submit" value="Submit" href={{portfolio.get_absolute_url}} class="btn btn-primary" role="button">
+    <a class="btn btn-danger" href={{portfolio.get_absolute_url}} role="button">Cancel</a>
+    <input type="submit" value="Submit" href={{portfolio.get_absolute_url}} class="btn btn-success" role="button">
 </form>
 
 {% endblock %}

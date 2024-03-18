@@ -3,12 +3,12 @@
 {% block content %}
 
 <h2>Delete Project</h2>
-<p>Are you sure youy want to delete project: {{project}}?</p>
+<p>Are you sure you want to delete project: {{project}}?</p>
 
 <form action="" method="post">
     {%csrf_token%}
-    <input type="submit" value="Delete" role="button" href={{portfolio.get_absolute_url}} class="btn btn-primary">
-    <a class="btn btn-primary" href={{portfolio.get_absolute_url}} role="button">Cancel</a>
+    <input type="submit" value="Delete" role="button" href={{portfolio.get_absolute_url}} class="btn btn-danger">
+    <a class="btn btn-info" href={{portfolio.get_absolute_url}} role="button">Cancel</a>
 </form>
 
 {% endblock %}

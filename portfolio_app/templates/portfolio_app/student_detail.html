@@ -1,0 +1,12 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{%block content%}
+<h2>{{student}}</h2>
+<p><b>Contact Email:</b> {{student.email}}</p>
+<p><b>Major:</b> {{student.major}}</p>
+<p><b>Portfolio: </b><a href={{student.portfolio.get_absolute_url}}>{{student.portfolio}}</a>
+    <a class="btn btn-warning" href="/portfolio/{{student.portfolio.id}}/edit_portfolio" role="button">Edit</a>
+</p>
+
+
+{%endblock%}

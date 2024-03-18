@@ -28,5 +28,11 @@ urlpatterns = [
     path('portfolio/<args>/edit_project/<id>', views.editProject, name='edit-project'),
 
     path('portfolio/<args>/del_project/<id>', views.delProject, name='del-project'),
+
+    path('students/', views.students, name='students'),
+
+    path('students/<args>', views.studentDetail, name='student-detail'),
+
+    path('portfolio/<args>/edit_portfolio', views.editPortfolio, name='edit-portfolio'),
 ]
 

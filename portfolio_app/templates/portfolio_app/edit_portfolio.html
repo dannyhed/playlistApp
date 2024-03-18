@@ -1,6 +1,5 @@
 {% extends "portfolio_app/base_template.html" %}
-
-{% block content %}
+{%block content%}
 
 <form action="" method="post">
     {% csrf_token %}
@@ -9,4 +8,4 @@
     <input type="submit" value="Submit" href={{portfolio.get_absolute_url}} class="btn btn-success" role="button">
 </form>
 
-{% endblock %}
+{%endblock%}
