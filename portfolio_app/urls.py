@@ -19,20 +19,20 @@ urlpatterns = [
 
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
-    path('portfolio/<args>/', views.portfolio, name='portfolio-detail'),
+    path('playlist/<args>/', views.playlist, name='playlist-detail'),
 
-    path('project/<args>/', views.project, name='project-detail'),
+    path('song/<args>/', views.song, name='song-detail'),
 
-    path('portfolio/<args>/new_project/', views.newProject, name='new-project'),
+    path('playlist/<args>/new_song/', views.newSong, name='new-song'),
 
-    path('portfolio/<args>/edit_project/<id>', views.editProject, name='edit-project'),
+    path('playlist/<args>/edit_song/<id>', views.editSong, name='edit-song'),
 
-    path('portfolio/<args>/del_project/<id>', views.delProject, name='del-project'),
+    path('playlist/<args>/del_song/<id>', views.delSong, name='del-song'),
 
-    path('students/', views.students, name='students'),
+    path('profiles/', views.profiles, name='profiles'),
 
-    path('students/<args>', views.studentDetail, name='student-detail'),
+    path('profiles/<args>', views.profileDetail, name='profile-detail'),
 
-    path('portfolio/<args>/edit_portfolio', views.editPortfolio, name='edit-portfolio'),
+    path('playlist/<args>/edit_playlist', views.editPlaylist, name='edit-playlist'),
 ]
 

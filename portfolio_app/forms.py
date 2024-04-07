@@ -1,12 +1,12 @@
 from django.forms import ModelForm
-from .models import Project, Portfolio
+from .models import Song, Playlist
 
 class ProjectForm(ModelForm):
     class Meta:
-        model = Project
+        model = Song
         fields = '__all__'
 
 class PortfolioForm(ModelForm):
     class Meta:
-        model = Portfolio
+        model = Playlist
         fields = '__all__'

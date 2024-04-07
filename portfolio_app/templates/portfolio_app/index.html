@@ -4,17 +4,17 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>Computer Science Portfolios</h1>
+<h1>Playlists</h1>
 
-<table>
+<!--<table>
     <tr>
         <th>Student</th>
         <th>Portfolio</th>
-    </table>
-    {% for student in students %}
+    </table>-->
+    {% for playlist in playlists %}
         <div class="container">
-        {{student.name}}
-        <a class="btn btn-info" href={{student.portfolio.get_absolute_url}} role="button">View</a>
+        {{playlist.name}}
+        <a class="btn btn-info" href={{playlist.get_absolute_url}} role="button">View</a>
         </div>
     {% endfor %}
 
