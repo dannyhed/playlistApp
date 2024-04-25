@@ -1,0 +1,14 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+
+<h2>Delete Project</h2>
+<p>Are you sure you want to delete project: {{project}}?</p>
+
+<form action="" method="post">
+    {%csrf_token%}
+    <input type="submit" value="Delete" role="button" href={{playlist.get_absolute_url}} class="btn btn-danger">
+    <a class="btn btn-info" href={{playlist.get_absolute_url}} role="button">Cancel</a>
+</form>
+
+{% endblock %}

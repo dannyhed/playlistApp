@@ -2,18 +2,6 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 
-class Song(models.Model):
-    title = models.CharField(max_length=200)
-    artist = models.CharField(max_length=200) #eventually will be artist profile
-    #add mp3 file or link
-
-    def __str__(self):
-        return self.title
-    
-    def get_absolute_url(self):
-        return reverse('song-detail', args=[str(self.id)])
-
-
 class Profile(models.Model):
 #List of choices for major value in database, human readable name
     USER_TYPE = (
@@ -39,7 +27,7 @@ class Profile(models.Model):
 
 class Playlist(models.Model):
     title = models.CharField(max_length=200)
-    profile = models.ForeignKey(Profile, null=True, on_delete=models.CASCADE, default=None, unique=True)
+    profile = models.ForeignKey(Profile, null=True, on_delete=models.CASCADE, default=None)
     description = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
@@ -47,3 +35,16 @@ class Playlist(models.Model):
     
     def get_absolute_url(self):
         return reverse('playlist-detail', args=[str(self.id)])
+
+
+class Song(models.Model):
+    title = models.CharField(max_length=200)
+    artist = models.CharField(max_length=200) #eventually will be artist profile
+    #add mp3 file or link
+    playlist = models.ForeignKey(Playlist, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse('song-detail', args=[str(self.id)])

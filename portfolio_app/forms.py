@@ -6,7 +6,7 @@ class ProjectForm(ModelForm):
         model = Song
         fields = '__all__'
 
-class PortfolioForm(ModelForm):
+class PlaylistForm(ModelForm):
     class Meta:
         model = Playlist
         fields = '__all__'

@@ -1,0 +1,26 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+<h2>Title: {{playlist}}</h2>
+<p><b>Profile:</b> {{playlist.profile}}</p>
+<p><b>Description:</b> {{playlist.description}}</p>
+
+<a class="btn btn-warning" href={{playlist.get_absolute_url}}edit_playlist role="button">Edit</a>
+<a class="btn btn-danger" href={{playlist.get_absolute_url}}del_playlist role="button">Delete</a>
+
+<p><p></p><b>Songs</b></p>
+
+<a class="btn btn-primary" href="new_song" role="button">New</a>
+
+{% for song in songs %}
+    <div class='container'>
+    <p>{{song}}
+    <a class="btn btn-info" href={{song.get_absolute_url}} role="button">View</a>
+    <a class="btn btn-warning" href="edit_song/{{song.id}}" role="button">Edit</a>
+    <a class="btn btn-danger" href="del_song/{{song.id}}" role="button">Delete</a>
+    </p></div>
+{% endfor %}
+
+
+
+{% endblock %}

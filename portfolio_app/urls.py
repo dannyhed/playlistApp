@@ -15,7 +15,9 @@ urlpatterns = [
     #path('', include('portfolio_app.urls')),
     path('', views.index, name='index'),
 
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('login/', views.login, name='login'),
+    
+    #path('login/', auth_views.LoginView.as_view(), name='login'),
 
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
@@ -25,6 +27,8 @@ urlpatterns = [
 
     path('playlist/<args>/new_song/', views.newSong, name='new-song'),
 
+    path('new_playlist/', views.newPlaylist, name='new-playlist'),
+
     path('playlist/<args>/edit_song/<id>', views.editSong, name='edit-song'),
 
     path('playlist/<args>/del_song/<id>', views.delSong, name='del-song'),
@@ -33,6 +37,8 @@ urlpatterns = [
 
     path('profiles/<args>', views.profileDetail, name='profile-detail'),
 
-    path('playlist/<args>/edit_playlist', views.editPlaylist, name='edit-playlist'),
+    path('playlist/<id>/edit_playlist', views.editPlaylist, name='edit-playlist'),
+    
+    path('playlist/<id>/del_playlist', views.delPlaylist, name='del-playlist'),
 ]
 

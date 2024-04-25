@@ -1,8 +1,0 @@
-{% extends "portfolio_app/base_template.html" %}
-
-{% block content %}
-<h2>Title: {{project}}</h2>
-<p><b>Portfolio: <a class="btn btn-info" href={{portfolio.get_absolute_url}} role="button">View</a></p></b>
-<p><b>Description: </b>{{project.description}}</p>
-
-{% endblock %}

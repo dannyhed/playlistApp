@@ -13,9 +13,13 @@
     </table>-->
     {% for playlist in playlists %}
         <div class="container">
-        {{playlist.name}}
+        {{playlist.title}}
         <a class="btn btn-info" href={{playlist.get_absolute_url}} role="button">View</a>
         </div>
     {% endfor %}
+
+    <a class="btn btn-info" href="new_playlist" role="button">New Playlist</a>
+
+<p>{{spotifyplaylists}}</p>
 
 {% endblock %}
